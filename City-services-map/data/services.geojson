@@ -1,0 +1,281 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "North Manchester General Hospital",
+          "type": "Hospital"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-2.2220, 53.5151]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Wythenshawe Hospital",
+          "type": "Hospital"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-2.2645, 53.3903]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Trafford General Hospital",
+          "type": "Hospital"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-2.3501, 53.4480]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Royal Manchester Children's Hospital",
+          "type": "Hospital"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-2.2307, 53.4602]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Salford Royal Hospital",
+          "type": "Hospital"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-2.3275, 53.4877]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Christie Hospital",
+          "type": "Hospital"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-2.2289, 53.4432]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Spire Manchester Hospital",
+          "type": "Hospital"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-2.2418, 53.4095]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "BMI The Alexandra Hospital",
+          "type": "Hospital"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-2.3032, 53.3920]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "St Mary's Hospital",
+          "type": "Hospital"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-2.2351, 53.4604]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Hope Hospital",
+          "type": "Hospital"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-2.3248, 53.4861]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "GMP Central Park Station",
+          "type": "Police Station"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-2.2046, 53.4980]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Longsight Police Station",
+          "type": "Police Station"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-2.2125, 53.4553]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Swinton Police Station",
+          "type": "Police Station"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-2.3448, 53.5123]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Trafford Police Station",
+          "type": "Police Station"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-2.3220, 53.4423]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Wythenshawe Police Station",
+          "type": "Police Station"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-2.2619, 53.3743]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Chorlton High School",
+          "type": "School"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-2.2732, 53.4435]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Burnage Academy for Boys",
+          "type": "School"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-2.2120, 53.4372]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Parrs Wood High School",
+          "type": "School"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-2.2318, 53.4197]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Whalley Range High School",
+          "type": "School"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-2.2646, 53.4556]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "The Barlow RC High School",
+          "type": "School"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-2.2516, 53.4142]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "St Peter's RC High School",
+          "type": "School"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-2.2067, 53.4690]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Trinity High School",
+          "type": "School"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-2.2414, 53.4711]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Manchester Academy",
+          "type": "School"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-2.2400, 53.4700]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Abraham Moss High School",
+          "type": "School"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-2.2332, 53.5143]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Levenshulme High School",
+          "type": "School"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-2.1931, 53.4494]
+        }
+      }
+    ]
+  }
+  

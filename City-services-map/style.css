@@ -1,0 +1,384 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f4f4f4;
+  color: #333;
+  text-align: center;
+}
+
+h1 {
+  margin: 10px 0;
+  font-size: 24px;
+}
+
+#map {
+  height: 92vh;
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+/* Leaflet control tweaks */
+.leaflet-control-layers {
+  font-size: 14px;
+  background: white;
+  padding: 5px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+/* Make leaflet controls look modern */
+.leaflet-control-layers {
+  background-color: white;
+  border-radius: 12px;
+  padding: 10px;
+  font-size: 14px;
+  line-height: 1.5;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  transition: all 0.3s ease-in-out;
+}
+
+.leaflet-control-layers label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 6px;
+  border-radius: 8px;
+  transition: background-color 0.2s;
+}
+
+.leaflet-control-layers label:hover {
+  background-color: #f0f0f0;
+  cursor: pointer;
+}
+
+.leaflet-control-layers-separator {
+  margin: 8px 0;
+  border-top: 1px solid #ccc;
+}
+
+.leaflet-control-layers-overlays,
+.leaflet-control-layers-base {
+  margin-top: 5px;
+}
+/* 🧭 Zoom controls */
+.leaflet-control-zoom {
+  border-radius: 12px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  background: white;
+}
+
+.leaflet-control-zoom a {
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+  padding: 6px 10px;
+  transition: all 0.2s ease-in-out;
+}
+
+.leaflet-control-zoom a:hover {
+  background-color: #f0f0f0;
+  color: #000;
+}
+
+/* 🔍 Search box */
+.leaflet-control-search {
+  border-radius: 12px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+  font-size: 14px;
+  padding: 4px;
+}
+
+.leaflet-control-search input {
+  border: none;
+  border-radius: 8px;
+  padding: 6px 12px;
+  width: 180px;
+  font-size: 14px;
+  outline: none;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.leaflet-control-search input:focus {
+  box-shadow: 0 2px 6px rgba(0, 123, 255, 0.4);
+}
+/* 📘 Floating Legend - Desktop Base */
+.map-legend {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  z-index: 999;
+  background: white;
+  padding: 12px 16px;
+  border-radius: 12px;
+  font-size: 14px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+  text-align: left;
+  width: 180px;
+  max-width: 90vw;
+}
+
+.map-legend h3 {
+  margin: 0 0 10px 0;
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+}
+
+.map-legend ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.map-legend li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+  line-height: 1.4;
+}
+
+.map-legend img {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+}
+
+/* 📱 Tablet View */
+@media (max-width: 1024px) {
+  .map-legend {
+    bottom: 15px;
+    right: 15px;
+    padding: 10px 14px;
+    font-size: 13px;
+    width: 160px;
+  }
+
+  .map-legend img {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+/* 📱 Mobile View */
+@media (max-width: 600px) {
+  .map-legend {
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    right: auto;
+    width: 90%;
+    font-size: 12.5px;
+    padding: 10px;
+    border-radius: 10px;
+  }
+
+  .map-legend h3 {
+    text-align: center;
+    font-size: 14px;
+    margin-bottom: 8px;
+  }
+
+  .map-legend ul {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+
+  .map-legend li {
+    margin-bottom: 6px;
+    flex: 1 0 30%;
+    justify-content: center;
+    gap: 5px;
+  }
+
+  .map-legend img {
+    width: 18px;
+    height: 18px;
+  }
+}
+/* Smooth fade for map */
+#map {
+  opacity: 0;
+  transition: opacity 0.6s ease-in-out;
+}
+
+body.loaded #map {
+  opacity: 1;
+}
+
+/* 🎯 Zoom & location button hover */
+.leaflet-bar a {
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.leaflet-bar a:hover {
+  background-color: #eaeaea;
+  transform: scale(1.05);
+}
+
+/* ✨ Legend entrance animation */
+.map-legend {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.6s ease 0.6s forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Typography and background touch */
+body {
+  background-color: #f8f9fa;
+  font-family: 'Inter', 'Segoe UI', Tahoma, sans-serif;
+  color: #222;
+}
+
+h1 {
+  font-weight: 600;
+  color: #222;
+}
+/* 🔥 Animated Landing */
+#landing-screen {
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(135deg, #00bcd4, #3f51b5);
+  overflow: hidden;
+  z-index: 1000;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.8s ease, visibility 0.8s ease;
+}
+
+#landing-screen.hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.landing-content {
+  z-index: 2;
+  text-align: center;
+  padding: 40px;
+  animation: fadeIn 1s ease-out forwards;
+}
+
+.landing-title {
+  font-size: 42px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  animation: slideUp 0.8s ease-out forwards;
+}
+
+.landing-title span {
+  color: #fff176;
+}
+
+.landing-subtitle {
+  font-size: 20px;
+  margin-bottom: 30px;
+  animation: fadeIn 1.3s ease-out forwards;
+}
+
+#start-map-btn {
+  background: white;
+  color: #3f51b5;
+  border: none;
+  font-size: 16px;
+  padding: 14px 28px;
+  border-radius: 50px;
+  font-weight: 600;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#start-map-btn:hover {
+  background-color: #f1f1f1;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.35);
+}
+
+/* 🎈 Floating shapes behind the content */
+.floating-shapes::before,
+.floating-shapes::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.2;
+  animation: float 10s infinite ease-in-out alternate;
+}
+
+.floating-shapes::before {
+  width: 300px;
+  height: 300px;
+  background: #fff;
+  top: 10%;
+  left: 20%;
+}
+
+.floating-shapes::after {
+  width: 200px;
+  height: 200px;
+  background: #fff;
+  bottom: 15%;
+  right: 15%;
+  animation-delay: 5s;
+}
+
+/* 🎞 Animations */
+@keyframes float {
+  from {
+    transform: translateY(0px) rotate(0deg);
+  }
+  to {
+    transform: translateY(-40px) rotate(20deg);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(40px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* 📱 Responsive tweaks */
+@media (max-width: 600px) {
+  .landing-title {
+    font-size: 28px;
+  }
+
+  .landing-subtitle {
+    font-size: 16px;
+  }
+
+  #start-map-btn {
+    font-size: 14px;
+    padding: 12px 22px;
+  }
+}
+/* Hide all Leaflet UI and legend when landing screen is visible */
+body.landing-active .leaflet-control,
+body.landing-active .map-legend,
+body.landing-active .leaflet-control-search,
+body.landing-active #map {
+  opacity: 0;
+  pointer-events: none;
+}

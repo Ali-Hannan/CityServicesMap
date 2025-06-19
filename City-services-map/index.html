@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Manchester City Services Map</title>
+
+  <!-- Leaflet CSS -->
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet/dist/leaflet.css"
+  />
+
+  <!-- Leaflet Search CSS -->
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet-search@3.0.2/dist/leaflet-search.min.css"
+  />
+
+  <!-- Your Custom Styles -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>Manchester City Services Locator</h1>
+  <div id="landing-screen">
+    <div class="floating-shapes"></div>
+    <div class="landing-content">
+      <h1 class="landing-title">Welcome to <span>Cyranix Services Locator</span></h1>
+      <p class="landing-subtitle">Manchester City Services Locator</p>
+      <button id="start-map-btn">Let's Get Started</button>
+    </div>
+  </div>
+  
+  <div id="map"></div>
+
+  <div id="legend" class="map-legend">
+    <h3>Legend</h3>
+    <ul>
+      <li><img src="https://cdn-icons-png.flaticon.com/512/2965/2965567.png" alt="Hospital"> Hospital</li>
+      <li><img src="https://cdn-icons-png.flaticon.com/512/1048/1048310.png" alt="School"> School</li>
+      <li><img src="https://cdn-icons-png.flaticon.com/512/4085/4085795.png" alt="Police Station"> Police Station</li>
+    </ul>
+  </div>
+  
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+  <!-- Your Map Script -->
+  <script src="script.js"></script>
+
+  <!-- Leaflet Search Plugin -->
+  <script src="https://unpkg.com/leaflet-search@3.0.2/dist/leaflet-search.min.js"></script>
+
+  <script>
+    window.addEventListener('load', () => {
+      document.body.classList.add('loaded');
+    });
+  </script>
+  
+
+  <script>
+    const landingScreen = document.getElementById('landing-screen');
+    const startBtn = document.getElementById('start-map-btn');
+  
+    function hideLandingScreen() {
+      landingScreen.classList.add('hidden');
+      document.body.classList.remove('landing-active');
+      document.body.classList.add('loaded');
+    }
+  
+    startBtn.addEventListener('click', hideLandingScreen);
+  
+    if (window.innerWidth > 768) {
+      setTimeout(() => hideLandingScreen(), 5000);
+    }
+  
+    document.body.classList.add('landing-active');
+  </script>
+  
+  
+  
+  
+</body>
+</html>
